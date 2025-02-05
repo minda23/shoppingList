@@ -1,0 +1,135 @@
+.your_cart {
+    background-color: white;
+    width: 25rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+    padding: 3rem;
+}
+
+.your_card h3 {
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    margin-top: 1.5rem;
+    text-align: center;
+    color: #C73b0F;
+}
+
+.your_card p {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.cart_title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    color: #C73b0F;
+}
+
+.product_name {
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem
+}
+
+.product_quantity {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid grey;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.image {
+    position: absolute;
+    right: 8rem
+}
+
+.order_total_label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.order_total_value {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.carbon_neutral_delivery {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-top: 0.5rem;
+    color: grey;
+    margin-left: 2rem;
+    width: 16rem;
+    padding: 0.5rem;
+    background-color: #F0F0F0;
+}
+
+.image_carbon {
+    position: relative;
+    left: -0.5rem;
+}
+
+.text_nature {
+    display: flex
+}
+
+
+
+.your_card img {
+    width: 6rem;
+    margin-top: 2rem;
+    transform: translateX(4rem);
+}
+
+.btn_order {
+    margin-top: 1rem;
+    padding: 1rem;
+    width: 10rem;
+    color: white;
+    border-radius: 2rem;
+    background-color: #c73b0f;
+    ;
+}
+
+.product_name {
+    color: black;
+    font-weight: bold
+}
+
+@media screen and (max-width: 768px) {
+    .your_cart {
+        width: auto;
+        height: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        padding: 2rem;
+    }
+
+    .your_card img {
+        margin: 1rem auto 0;
+        transform: none;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .your_card h3 {
+        font-size: 1.2rem;
+    }
+}
