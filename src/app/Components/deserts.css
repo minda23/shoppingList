@@ -1,39 +1,58 @@
-.desserts-container {
-    padding: 2rem;
-    display: flex;
-    gap: 10rem;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    color: #333;
+    background-color: #fff;
 }
 
 .heading {
-    position: absolute;
-    left: 10rem;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.desserts-container {
+    margin: 0rem auto;
+    padding: 2rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.basket {
+    flex: 1;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 1rem;
 }
 
 .desserts-list {
-    margin-top: 5rem;
+    flex: 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin-left: 5rem;
+    margin-top: 1rem;
 }
 
 .dessert-item {
     background-color: #f9f9f9;
     border-radius: 8px;
     text-align: center;
-    max-width: 15rem;
-}
-
-.dessert-image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
+    padding: 1rem;
 }
 
 .dessert-image {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 8px;
 }
 
 .dessert-thumbnail {
@@ -54,7 +73,7 @@
 }
 
 .dessert-name {
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
@@ -62,76 +81,62 @@
 .dessert-price {
     font-size: 1rem;
     color: #333;
+    margin-bottom: 1rem;
 }
 
 .quantity-controls {
-    background-color: #C73b0F;
+    display: inline-flex;
+    align-items: center;
+    background-color: #c73b0f;
     border-radius: 2rem;
-    width: 13rem;
-    margin-bottom: 2rem;
-    margin-left: 1rem;
+    padding: 0.5rem 1rem;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
-    align-content: center;
     justify-content: center;
-    background-color: #C73b0F;
+    background-color: #c73b0f;
     color: #fff;
+    border: none;
     border-radius: 2rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    margin-top: 1rem;
     font-size: 1rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    padding: 0.15rem 0.50rem;
+    padding: 0.25rem 0.75rem;
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
-    margin-bottom: 1rem;
+    margin: 0 0.25rem;
 }
 
-.btn:hover {
-    background: #2980b9;
-}
 
-.btn:active {
-    transform: scale(0.98);
-}
 
 .btn:focus {
-    outline: none;
+    outline: 2px solid #ccc;
 }
 
 @media screen and (max-width: 768px) {
     .desserts-container {
         flex-direction: column;
-        gap: 2rem;
         padding: 1rem;
     }
 
-    .heading {
-        position: static;
-        left: auto;
-        margin-bottom: 1rem;
+    .basket {
+        order: 2;
+        margin-top: 2rem;
     }
 
     .desserts-list {
-        margin: 0 auto;
+        order: 1;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
         margin-top: 2rem;
     }
 
-    .dessert-item {
-        max-width: 100%;
-    }
-
-    .quantity-controls {
-        width: auto;
-        margin-left: 0;
+    .heading {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -141,26 +146,8 @@
         gap: 1rem;
     }
 
-    .heading {
-        font-size: 1.25rem;
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-
     .dessert-item {
-        margin: 0 auto;
-        max-width: 18rem;
+        max-width: 100%;
     }
 
-    .quantity-controls {
-        width: 100%;
-        margin: 1rem auto;
-    }
-
-    .btn {
-        width: auto;
-        font-size: 0.875rem;
-        padding: 0.25rem 1rem;
-        margin: 0.5rem;
-    }
 }

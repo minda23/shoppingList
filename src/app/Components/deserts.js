@@ -2,8 +2,10 @@
 import React, { useEffect, useReducer, useContext } from "react";
 import DataContext from "./dataContext";
 import AddToAlbumModal from "./AddToAlbumModal";
+import AddToBasket from "./addToBasket";
 import "./deserts.css";
 import OrderSummary from "./OrderSummary";
+
 
 const initialState = {
     desserts: [],
@@ -54,6 +56,8 @@ const myReducer = (state, dispatchedAction) => {
 const Desert = () => {
     const [state, dispatch] = useReducer(myReducer, initialState);
 
+    const openBasket = state.count === 1 ? <AddToBasket /> : <OrderSummary />
+
 
     useEffect(() => {
         fetch("/data.json")
@@ -67,8 +71,8 @@ const Desert = () => {
     return (
         <DataContext.Provider value={[state, dispatch]}>
             {state.isModalOpen === true ? <AddToAlbumModal /> : null}
+            <h1 className="heading">Deserts</h1>
             <div className='desserts-container'>
-                <h1 className="heading">Deserts</h1>
                 <div className='desserts-list'>
                     {state.desserts.map((dessert, index) => (
                         <div key={index} className='dessert-item'>
@@ -89,17 +93,19 @@ const Desert = () => {
                                 <span className='dessert-category'>{dessert.category}</span>
                                 <p className='dessert-name'>{dessert.name}</p>
                                 <p className='dessert-price'>${dessert.price}</p>
+
                             </div>
                             <div class="quantity-controls">
                                 <button onClick={() => dispatch({ type: "decrement" })} className="btn minus">-</button>
                                 <span class="quantity">{state.count}</span>
-                                <button onClick={() => dispatch({ type: "increment" })} className="btn minus">+</button>
+                                <button onClick={() => dispatch({ type: "increment", value: openBasket })} className="btn minus">+</button>
                             </div>
                         </div>
                     ))}
                 </div>
-                <div>
-                    <OrderSummary />
+                <div className="Basket">
+
+
                 </div>
             </div>
         </DataContext.Provider>
