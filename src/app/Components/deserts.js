@@ -78,9 +78,10 @@ const Desert = () => {
                 </div>
                 <div className="Basket">
 
+                    <AddToBasket />
                 </div>
             </div>
-            {showAddToBasket && <AddToBasket />}
+
         </>
     );
 };

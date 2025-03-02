@@ -1,4 +1,6 @@
 .your_cart {
+    display: flex;
+    flex-direction: row;
     background-color: white;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -52,7 +54,9 @@
 
 .image {
     position: absolute;
-    right: 8rem
+    top: 11.2rem;
+    right: 8rem;
+    width: 1rem;
 }
 
 .order_total_label {
@@ -73,7 +77,6 @@
     text-align: center;
     margin-top: 0.5rem;
     color: grey;
-    margin-left: 2rem;
     width: 16rem;
     padding: 0.5rem;
     background-color: #F0F0F0;
@@ -99,11 +102,10 @@
 .btn_order {
     margin-top: 1rem;
     padding: 1rem;
-    width: 10rem;
     color: white;
     border-radius: 2rem;
     background-color: #c73b0f;
-    ;
+
 }
 
 .product_name {

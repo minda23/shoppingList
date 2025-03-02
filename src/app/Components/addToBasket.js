@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import OpenModal from './openModal';
+import './addToBasket.css';
+
 
 const AddToBasket = () => {
     const [openModal, setOpenModal] = useState(false);
 
     return (
         <>
-            <div>
+            <div className='basket'>
                 <div>
                     <p className='product_name'>here gonna be name of product</p>
                     <p className='product_quantity'>
