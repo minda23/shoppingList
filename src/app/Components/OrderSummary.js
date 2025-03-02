@@ -7,7 +7,6 @@ import { useContext } from "react";
 
 
 const OrderSummary = () => {
-    const [state, dispatch] = useContext(DataContext)
 
     return (
         <div className='your_cart'>

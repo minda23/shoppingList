@@ -67,7 +67,7 @@ body {
 
 .dessert-category {
     font-size: 0.875rem;
-    color: #999;
+    color: black;
     margin-bottom: 0.5rem;
     display: inline-block;
 }
@@ -148,6 +148,11 @@ body {
 
     .dessert-item {
         max-width: 100%;
+    }
+
+    .quantity-controls {
+        padding: 1rem;
+        max-width: 50%;
     }
 
 }
