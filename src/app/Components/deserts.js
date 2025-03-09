@@ -7,6 +7,24 @@ import OrderSummary from "./OrderSummary";
 
 const Desert = () => {
     const [cart, setCart] = useState([]);
+    const [show, setShow] = useState(false);
+    const [show1, setShow1] = useState(false);
+
+
+    const onShowClick = () => {
+        if (show === false) {
+            setShow(true)
+        }
+        else setShow(false)
+    }
+
+
+    const onShowClick1 = () => {
+        if (show1 === false) {
+            setShow1(true)
+        }
+        else setShow(false)
+    }
 
     const incrementCounter = (card_id) => {
         setCart(cart =>
@@ -37,7 +55,7 @@ const Desert = () => {
     }, [1]);
 
     return (
-        <DataContext.Provider value={[state]}>
+        <DataContext.Provider value={[]}>
             <>
                 <h1 className="heading">Deserts</h1>
                 <div className="desserts-container">
@@ -62,14 +80,18 @@ const Desert = () => {
                                 <div className="quantity-controls">
                                     <button onClick={() => decrementCounter(dessert.id)} className="btn minus">-</button>
                                     <span className="quantity">{dessert.product_qua}</span>
-                                    <button onClick={() => incrementCounter(dessert.id)} className="btn plus">+</button>
+                                    <button onClick={() => {
+                                        incrementCounter(dessert.id);
+                                        onShowClick();
+                                        { show && <AddToBasket /> }
+                                    }} className="btn plus">+</button>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="Basket">
                         <OrderSummary />
-                        <AddToBasket />
+
                     </div>
                 </div>
             </>

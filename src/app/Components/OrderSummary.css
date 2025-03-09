@@ -1,6 +1,6 @@
 .your_cart {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -91,7 +91,7 @@
 
 
 .your_card img {
-    width: 6rem;
+    width: 3rem;
     margin-top: 2rem;
     transform: translateX(4rem);
 }
