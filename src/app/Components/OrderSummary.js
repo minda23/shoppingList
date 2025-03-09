@@ -10,7 +10,7 @@ const OrderSummary = () => {
 
     return (
         <div className='your_cart'>
-            <p className='cart_title'>Your Cart</p>
+            <p className='cart_title'>Your Cart(0)</p>
 
 
 
