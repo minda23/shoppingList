@@ -38,8 +38,8 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 1rem;
-    flex: 2;
-    width: 5rem;
+    flex: 5;
+
 }
 
 .dessert-item {

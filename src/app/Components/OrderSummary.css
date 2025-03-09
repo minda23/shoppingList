@@ -53,7 +53,7 @@
 .image {
     margin-left: 2rem;
     font-size: 1.3rem;
-    width: 1rem;
+    width: 0.2rem;
 }
 
 .order_total_label {
@@ -91,7 +91,7 @@
 
 
 .your_card img {
-    width: 3rem;
+    width: 1rem;
     margin-top: 2rem;
     transform: translateX(4rem);
 }
