@@ -8,6 +8,8 @@
     padding: 3rem;
 }
 
+
+
 .your_card h3 {
     font-size: 1.5rem;
     margin-left: 1rem;
@@ -20,6 +22,8 @@
     margin-top: 1rem;
     text-align: center;
 }
+
+
 
 .cart_title {
     font-size: 1.5rem;
@@ -93,7 +97,7 @@
 .your_card img {
     width: 1rem;
     margin-top: 2rem;
-    transform: translateX(4rem);
+
 }
 
 .btn_order {
@@ -112,17 +116,14 @@
 
 @media screen and (max-width: 768px) {
     .your_cart {
-        width: auto;
         height: auto;
         margin-top: 1rem;
         margin-bottom: 1rem;
         padding: 2rem;
     }
 
-    .your_card img {
-        margin: 1rem auto 0;
-        transform: none;
-        display: block;
+    .empty_card_image {
+        width: 50%;
     }
 }
 
