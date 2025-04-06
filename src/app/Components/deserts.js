@@ -52,7 +52,7 @@ const Desert = () => {
             .then((data) =>
                 setCart(data.map(item => ({ ...item, product_qua: 0 })))
             );
-    }, [1]);
+    }, []);
 
     return (
         <DataContext.Provider value={[]}>
@@ -83,7 +83,7 @@ const Desert = () => {
                                     <button onClick={() => {
                                         incrementCounter(dessert.id);
                                         onShowClick();
-                                        { show && <AddToBasket /> }
+                                        { !!show && <AddToBasket /> }
                                     }} className="btn plus">+</button>
                                 </div>
                             </div>

@@ -6,6 +6,7 @@
     margin-bottom: 2rem;
     border-radius: 0.5rem;
     padding: 3rem;
+    max-width: 18rem;
 }
 
 
@@ -120,15 +121,21 @@
         margin-top: 1rem;
         margin-bottom: 1rem;
         padding: 2rem;
+
     }
 
     .empty_card_image {
         width: 50%;
     }
+
+
 }
 
 @media screen and (max-width: 480px) {
+
+
     .your_card h3 {
         font-size: 1.2rem;
+
     }
 }
