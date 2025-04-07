@@ -15,6 +15,7 @@ const OpenModal = ({ onClose }) => {
                     <div className="modal_text">
                         <span className="checked">&#10003;</span>
                         <h1>Order Confirmed</h1>
+                        <p>ahoj ako sa mas ?</p>
                         <p>We hope you enjoy your food</p>
                         <p>$8</p>
                     </div>
