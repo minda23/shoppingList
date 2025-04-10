@@ -5,7 +5,7 @@ import "./openModal.css";
 const OpenModal = ({ onClose }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
-        onClose();
+        onClose();// open modal
     };
 
     return (
