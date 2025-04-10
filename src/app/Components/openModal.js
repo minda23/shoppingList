@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect, useReducer, useContext } from "react";
-import "./openModal.css";
+import "./openModal2.css";
 
 const OpenModal = ({ onClose }) => {
     const handleSubmit = (e) => {
