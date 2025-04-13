@@ -6,7 +6,8 @@ import DataContext from "./dataContext";
 import { useContext } from "react";
 
 
-const OrderSummary = () => {
+const OrderSummary = (props) => {
+    const { item } = props;
 
     return (
         <div className='your_cart'>

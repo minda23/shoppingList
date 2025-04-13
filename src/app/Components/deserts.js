@@ -7,24 +7,11 @@ import OrderSummary from "./OrderSummary";
 
 const Desert = () => {
     const [cart, setCart] = useState([]);
-    const [show, setShow] = useState(false);
-    const [show1, setShow1] = useState(false);
+    const [selectedCakeId, setSelectedCakeId] = useState("")
+    const [showAddToBasket, setShowAddToBasket] = useState(false);
 
 
-    const onShowClick = () => {
-        if (show === false) {
-            setShow(true)
-        }
-        else setShow(false)
-    }
 
-
-    const onShowClick1 = () => {
-        if (show1 === false) {
-            setShow1(true)
-        }
-        else setShow(false)
-    }
 
     const incrementCounter = (card_id) => {
         setCart(cart =>
@@ -53,6 +40,13 @@ const Desert = () => {
                 setCart(data.map(item => ({ ...item, product_qua: 0 })))
             );
     }, []);
+    let emptyBasket = {};
+
+    if (selectedCakeId !== "") {
+        const FilteredItemForBasket = cart.filter((item) => item.id === selectedCakeId)
+        emptyBasket = FilteredItemForBasket;
+        console.log(FilteredItemForBasket)
+    }
 
     return (
         <DataContext.Provider value={[]}>
@@ -82,16 +76,16 @@ const Desert = () => {
                                     <span className="quantity">{dessert.product_qua}</span>
                                     <button onClick={() => {
                                         incrementCounter(dessert.id);
-                                        onShowClick();
-                                        { !!show && <AddToBasket /> }
+                                        setSelectedCakeId(dessert.id)
+                                        setShowAddToBasket(true);
                                     }} className="btn plus">+</button>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="Basket">
-                        <OrderSummary />
-
+                        {!!selectedCakeId && <AddToBasket item={selectedCakeId} />}
+                        {!selectedCakeId && <OrderSummary item={showAddToBasket} />}
                     </div>
                 </div>
             </>

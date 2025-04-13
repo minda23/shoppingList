@@ -3,22 +3,23 @@ import OpenModal from './openModal';
 import './addToBasket.css';
 
 
-const AddToBasket = () => {
+const AddToBasket = (props) => {
+    const { item } = props;
     const [openModal, setOpenModal] = useState(false);
 
     return (
         <>
             <div className='basket'>
                 <div>
-                    <p className='product_name'>here gonna be name of product</p>
+                    <p className='product_name'>{item.name}</p>
                     <p className='product_quantity'>
-                        1x @8.00 $8.00
-                        <img className='image' src='/images/icon-remove-item.svg' alt='remove item' />
+
+                        <img onClick={() => console.log('Remove item clicked')} className='image' src='/images/icon-remove-item.svg' alt='remove item' />
                     </p>
                 </div>
                 <div className='order'>
                     <p className='order_total_label'>Order Total</p>
-                    <p className='order_total_value'>$8.00</p>
+                    <p className='order_total_value'>{item.price}</p>
                 </div>
                 <p className='carbon_neutral_delivery'>
                     <img
