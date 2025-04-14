@@ -84,7 +84,7 @@ const Desert = () => {
                         ))}
                     </div>
                     <div className="Basket">
-                        {!!selectedCakeId && <AddToBasket item={selectedCakeId} />}
+                        {!!showAddToBasket && selectedCakeId && <AddToBasket item={selectedCakeId} />}
                         {!selectedCakeId && <OrderSummary item={showAddToBasket} />}
                     </div>
                 </div>
