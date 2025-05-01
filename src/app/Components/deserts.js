@@ -56,7 +56,7 @@ const Desert = () => {
                 <div className="desserts-container">
                     <div className="desserts-list">
                         {cart.map((dessert, key) => (
-                            <div key={key} className="dessert-item">
+                            <div style={dessert.product_qua > 0 ? { border: "2px solid #C73B0F" } : {}} key={key} className="dessert-item">
                                 <div className="dessert-image-container">
                                     <picture className="dessert-image">
                                         <source srcSet={dessert.image.desktop} media="(min-width: 1024px)" />

@@ -1,4 +1,3 @@
-
 "use client";
 import React from 'react';
 import './OrderSummary.css';
@@ -12,18 +11,27 @@ const OrderSummary = (props) => {
     const [openModal, setOpenModal] = useState(false);
     const [selectedCakeId, setSelectedCakeId] = useState("")
 
-    const { cart } = useContext(DataContext);
+
+    const { cart, setCart } = useContext(DataContext);
 
     const totalQuantity = cart.reduce((sum, item) => sum + (item.product_qua || 0), 0);
     const itemsWithAtLeastOneQuantity = cart.filter(item => item.product_qua > 0)
+
     const selectedItem = cart.find(item => item.id === selectedCakeId);
     console.log("Selected item:", selectedItem);
 
 
+    const deleteItem = (card_id) => {
+        setCart(cart =>
+            cart.map((item) =>
+                card_id === item.id && item.product_qua > 0
+                    ? { ...item, product_qua: 0 }
+                    : item
+            )
+        );
+    };
     return (
-
         <>
-
             <div className='basket'>
                 <div>
                     <p className='cart_title'>Your Cart ({totalQuantity})</p>
@@ -31,7 +39,7 @@ const OrderSummary = (props) => {
                         <div>
                             <div className='product_info'>
                                 <p className='product_name'>{item.name}</p>
-                                <img onClick={() => console.log('Remove item clicked')} className='image' src='./images/icon-remove-item.svg' alt='remove item' />
+                                <img onClick={() => { deleteItem(item.id) }} className='image' src='./images/icon-remove-item.svg' alt='remove item' />
                             </div>
                             <div className='total-prize'>
                                 <p className='cart_count'>{item.product_qua}x</p>
