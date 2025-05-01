@@ -57,8 +57,39 @@
 
 .image {
     margin-left: 2rem;
+    margin-top: 1rem;
     font-size: 1.3rem;
-    width: 0.2rem;
+    width: 1.2rem;
+}
+
+.item-prize {
+    color: #856259;
+}
+
+.cart_count {
+    color: #C73A0F;
+}
+
+.order_total_value {
+    color: #260F08;
+}
+
+
+.total-prize {
+    display: flex;
+    gap: 0.5rem;
+}
+
+
+
+
+.item-dollar-prize {
+    color: #87635A;
+}
+
+.product_info {
+    display: flex;
+    justify-content: space-between;
 }
 
 .order_total_label {
@@ -92,6 +123,8 @@
 .text_nature {
     display: flex
 }
+
+
 
 
 

@@ -3,12 +3,11 @@ import React, { useEffect, useState, useContext } from "react";
 import DataContext from "./dataContext";
 import AddToBasket from "./addToBasket";
 import "./deserts.css";
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "./orderSummary";
 
 const Desert = () => {
     const [cart, setCart] = useState([]);
     const [selectedCakeId, setSelectedCakeId] = useState("")
-    const [showAddToBasket, setShowAddToBasket] = useState(false);
 
     //Tak jednoznačne dobrá úloha by bola zobrazovať kliknute dezerty v košíku na pravo
     //  ako v tej príkladnej apke čo ste poslali :) Keby ste to náhodou mali príliš ľahké,
@@ -45,16 +44,13 @@ const Desert = () => {
                 setCart(data.map(item => ({ ...item, product_qua: 0 })))
             );
     }, []);
-    let emptyBasket = {};
 
-    if (selectedCakeId !== "") {
-        const FilteredItemForBasket = cart.filter((item) => item.id === selectedCakeId)
-        emptyBasket = FilteredItemForBasket;
-        console.log(FilteredItemForBasket)
-    }
+    const selectedItem = cart.find(item => item.id === selectedCakeId);
+    console.log("Selected item:", selectedItem);
+
 
     return (
-        <DataContext.Provider value={[]}>
+        <DataContext.Provider value={{ cart, setCart }}>
             <>
                 <h1 className="heading">Deserts</h1>
                 <div className="desserts-container">
@@ -82,16 +78,18 @@ const Desert = () => {
                                     <button onClick={() => {
                                         incrementCounter(dessert.id);
                                         setSelectedCakeId(dessert.id)
-                                        setShowAddToBasket(true);
+
                                     }} className="btn plus">+</button>
                                 </div>
                             </div>
                         ))}
                     </div>
                     <div className="Basket">
-                        {!!selectedCakeId && <AddToBasket item={emptyBasket} />}
-                        {!selectedCakeId && <OrderSummary item={showAddToBasket} />}
+                        {!selectedItem && <AddToBasket />}
+                        {selectedItem && <OrderSummary item={selectedItem} />}
                     </div>
+
+
                 </div>
             </>
         </DataContext.Provider>
