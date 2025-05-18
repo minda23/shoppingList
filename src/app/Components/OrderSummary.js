@@ -9,16 +9,10 @@ import OpenModal from './openModal';
 const OrderSummary = (props) => {
     const { item } = props;
     const [openModal, setOpenModal] = useState(false);
-    const [selectedCakeId, setSelectedCakeId] = useState("")
-
-
     const { cart, setCart } = useContext(DataContext);
 
     const totalQuantity = cart.reduce((sum, item) => sum + (item.product_qua || 0), 0);
-    const itemsWithAtLeastOneQuantity = cart.filter(item => item.product_qua > 0)
-
-    const selectedItem = cart.find(item => item.id === selectedCakeId);
-    console.log("Selected item:", selectedItem);
+    const itemsWithAtLeastOneQuantity = cart.filter(item => item.product_qua > 0);
 
 
     const deleteItem = (card_id) => {

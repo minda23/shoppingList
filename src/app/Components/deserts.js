@@ -4,6 +4,7 @@ import DataContext from "./dataContext";
 import AddToBasket from "./addToBasket";
 import "./deserts.css";
 import OrderSummary from "./orderSummary";
+import OpenModal from "./openModal";
 
 const Desert = () => {
     const [cart, setCart] = useState([]);
@@ -87,6 +88,7 @@ const Desert = () => {
                     <div className="Basket">
                         {!selectedItem && <AddToBasket />}
                         {selectedItem && <OrderSummary item={selectedItem} />}
+                        {<OpenModal item={selectedItem} />}
                     </div>
 
 
