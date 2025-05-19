@@ -13,17 +13,16 @@
 
 .modal-box {
     margin-top: 1.5rem;
-    padding: 3rem 6rem 3rem 6rem;
+    padding: 1rem 6rem 6rem 6rem;
     background-color: white;
     border-radius: 1.2rem;
     opacity: 1;
     position: relative;
     top: -2rem;
-    width: 35rem;
-    height: 45rem;
-
-
-
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .modal_items {
@@ -44,23 +43,20 @@
     background-color: #1DB954;
 }
 
-.buttons1 {
-    display: flex;
-    gap: 1rem;
-    position: sticky;
-    position: absolute;
-    bottom: 1rem;
-    padding: 3rem;
-    text-align: left;
 
-}
 
 .close {
+    display: flex;
+    align-self: bottom;
     background-color: #c73b0f;
     color: white;
-    width: 15rem;
+    width: 12rem;
     padding: 1.3rem;
     border-radius: 2rem;
+    right: 1rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
 
 }
 
@@ -84,7 +80,7 @@
     font-size: 4rem;
     font-weight: bold;
     color: lightgreen;
-    margin-bottom: 2rem;
+
 }
 
 .modal_text h1 {
@@ -94,10 +90,8 @@
 
 @media (max-width: 720px) {
     .modal-box {
-        position: relative;
-        right: 2rem;
-        padding: 1rem;
-        margin-left: 14rem;
+        padding: 3rem;
+
 
     }
 
@@ -132,6 +126,12 @@
     .modal-box {
         padding: 1rem;
 
+    }
+
+    .close {
+        padding: 2.8rem;
+        font-size: 0.8rem;
+        border-radius: 1.5rem;
     }
 
     .buttons1 {

@@ -65,18 +65,18 @@ const OpenModal = ({ onClose }) => {
                         </div>
                     </div>
 
-                    {/* Button to submit the order (which will also close the modal) */}
-                    <div className="buttons1">
-                        <button
-                            variant="contained"
-                            className="close"
-                            onClick={handleSubmit} // Close the modal when clicked
-                        >
-                            Submit Order
-                        </button>
-                    </div>
+
+                </div>
+                <div className="">
+                    <button
+                        variant="contained"
+                        className="close"// Close the modal when clicked
+                    >
+                        Submit Order
+                    </button>
                 </div>
             </div>
+
         </div>
     );
 };
