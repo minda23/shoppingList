@@ -1,7 +1,7 @@
 "use client";
 import React, { useContext } from "react";
 import DataContext from "./dataContext";
-import "./openModal.css";
+import "./openModal2.css";
 
 const OpenModal = ({ onClose }) => {
     if (typeof onClose !== "function") {

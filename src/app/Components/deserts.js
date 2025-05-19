@@ -3,7 +3,7 @@ import React, { useEffect, useState, useContext } from "react";
 import DataContext from "./dataContext";
 import AddToBasket from "./addToBasket";
 import "./deserts.css";
-import OrderSummary from "./OrderSummary";
+import OrderSummary from "./orderSummary";
 import OpenModal from "./openModal";
 
 const Desert = () => {
