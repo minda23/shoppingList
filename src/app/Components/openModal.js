@@ -9,16 +9,11 @@ const OpenModal = ({ onClose }) => {
         return null;
     }
     const { cart, setCart } = useContext(DataContext);
-
-    // Filter items with quantity > 0
     const itemsWithAtLeastOneQuantity = cart.filter(item => item.product_qua > 0);
-
-    // Delete item from the cart
     const deleteItem = (id) => {
         setCart(cart.filter(item => item.id !== id));
     };
 
-    // Handle the order submission and close the modal
     const handleSubmit = (e) => {
         e.preventDefault();
         onClose()
@@ -34,7 +29,6 @@ const OpenModal = ({ onClose }) => {
                             <h1>Order Confirmed</h1>
                             <p>We hope you enjoy your food</p>
 
-                            {/* Display cart items with quantity > 0 */}
                             {itemsWithAtLeastOneQuantity.map((item) => (
                                 <div key={item.id}>
                                     <div className="product_info">
@@ -71,7 +65,7 @@ const OpenModal = ({ onClose }) => {
                     <div className="">
                         <button
                             variant="contained"
-                            className="close"// Close the modal when clicked
+                            className="close"
                         >
                             Submit Order
                         </button>

@@ -48,8 +48,8 @@ const OrderSummary = (props) => {
                         <p className='order_total_value'>{item.price}$</p>
                     </div>
                     <p className='carbon_neutral_delivery'>
-                        <img
-                            src={item.image}
+                        <img className='image-carbon'
+                            src='./images/icon-carbon-neutral.svg'
                             alt="Product"
                         />
                         This is carbon neutral delivery

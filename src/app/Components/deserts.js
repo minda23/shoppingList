@@ -10,19 +10,11 @@ const Desert = () => {
     const [cart, setCart] = useState([]);
     const [selectedCakeId, setSelectedCakeId] = useState("")
 
-    //Tak jednoznačne dobrá úloha by bola zobrazovať kliknute dezerty v košíku na pravo
-    //  ako v tej príkladnej apke čo ste poslali :) Keby ste to náhodou mali príliš ľahké,
-    //  tak môžete ešte tam aj pridať gombík vymazať ich s košíku ako to majú oni.
-    //  A ináč, srandovna vec je že som si všimol že oni majú bug že keď kliknete vymazať z košíka, 
-    // tak sa číslo nezmení na tom dezerte na ľavo 😆 
-    // Takže keby ste náhodou ku tomu dostali, tak môžete to skúsiť urobiť ešte lepšie :)
-
-
     const incrementCounter = (card_id) => {
         setCart(cart =>
             cart.map((item) =>
                 card_id === item.id
-                    ? { ...item, product_qua: (item.product_qua || 0) + 1 }
+                    ? { ...item, product_qua: item.product_qua + 1 }
                     : item
             )
         );

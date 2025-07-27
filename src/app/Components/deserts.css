@@ -128,6 +128,8 @@ body {
     .basket {
         order: 2;
         margin-top: 2rem;
+        display: flex;
+        align-items: center;
     }
 
     .desserts-list {
