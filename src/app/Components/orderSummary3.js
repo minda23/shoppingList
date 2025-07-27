@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import './orderSummary.css';
+import './orderSummary3.css';
 import DataContext from "./dataContext";
 import { useContext, useState } from "react";
 import OpenModal from './openModal';
